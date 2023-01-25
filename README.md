@@ -1,6 +1,6 @@
 # travelsi (react-redux exercise)
 
-✈🏝 [travelsi LIVE](travelsi-demo.netlify.app)
+✈🏝 [travelsi LIVE](https://travelsi-demo.netlify.app/)
 
 I wanted to practice and cover quickly the basics of the Redux Toolkit with React. Therefore designing a new app and developing it (basically just the demo concept of the web app) within just a few hours was my other challenge.
 

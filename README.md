@@ -20,5 +20,6 @@ What I managed to accomplish, is:
 - If `isAuthenticated`, a user can access `Account` component and its children. For now, `isAuthenticated` means to submit any random values when Sign In.
 
 ## UI
+- light, modern, responsive
 
 <p align="center"><img src="/src/assets/img/travelsi-ui.png"></p>

@@ -1,0 +1,53 @@
+.signin {
+  max-width: 50rem;
+}
+
+.signin__dot {
+  height: 22px;
+  width: 22px;
+  margin-left: 0.5rem;
+  background-color: var(--color-orange);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.signin form {
+  margin-top: 3rem;
+}
+
+.signin form div {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+}
+
+.signin form div a {
+  font-size: 1.3rem;
+  color: var(--color-orange);
+  margin-left: auto;
+  margin-top: 1rem;
+}
+
+.signin__register-action {
+  margin-top: 3rem;
+}
+
+.signin__button {
+  min-width: 100%;
+}
+
+.signin__disclaimer {
+  margin-top: 2rem;
+}
+
+.signin__disclaimer p {
+  color: rgb(123, 123, 123);
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+@media (max-width: 896px) {
+  /* .signin {
+    
+  } */
+}

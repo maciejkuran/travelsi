@@ -1,0 +1,45 @@
+.nav {
+  background-color: white;
+}
+
+.nav__wrapper {
+  margin: auto;
+  max-width: 110rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.nav__wrapper h4 span {
+  color: var(--color-orange);
+}
+
+.nav__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__logo div {
+  height: 30px;
+  width: 30px;
+  margin-right: 0.5rem;
+  background-color: var(--color-orange);
+  border-radius: 50%;
+}
+
+@media (max-width: 523px) {
+  .nav__wrapper h4 {
+    font-size: 1.6rem;
+  }
+
+  .nav__logo div {
+    height: 20px;
+    width: 20px;
+  }
+
+  .nav__button--logout {
+    font-size: 1.4rem;
+  }
+}

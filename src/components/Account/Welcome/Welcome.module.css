@@ -1,0 +1,7 @@
+.welcome {
+  max-width: fit-content;
+}
+
+.welcome p {
+  color: var(--color-orange);
+}

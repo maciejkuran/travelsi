@@ -1,0 +1,8 @@
+.account {
+  margin: 3rem 1rem;
+}
+
+.account__wrapper {
+  max-width: 110rem;
+  margin: auto;
+}

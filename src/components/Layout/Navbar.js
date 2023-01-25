@@ -1,8 +1,15 @@
 import classes from './Navbar.module.css';
 import PrimaryButton from '../UI/PrimaryButton';
-import Card from '../UI/Card';
+import { useDispatch } from 'react-redux';
+import { authSliceActions } from '../../store/auth-slice';
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+
+  const logoutHandler = () => {
+    dispatch(authSliceActions.setNotAuthenticated());
+  };
+
   return (
     <nav className={classes['nav']}>
       <div className={classes['nav__wrapper']}>
@@ -12,7 +19,12 @@ const Navbar = () => {
             travel<span>si</span>
           </h4>
         </div>
-        <PrimaryButton className={classes['nav__button--logout']}>LOG OUT</PrimaryButton>
+        <PrimaryButton
+          attributes={{ type: 'button', onClick: logoutHandler }}
+          className={classes['nav__button--logout']}
+        >
+          LOG OUT
+        </PrimaryButton>
       </div>
     </nav>
   );

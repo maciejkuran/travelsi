@@ -3,14 +3,24 @@ import Card from '../UI/Card';
 import Input from '../UI/Input';
 import PrimaryButton from '../UI/PrimaryButton';
 
+import { useDispatch } from 'react-redux';
+import { authSliceActions } from '../../store/auth-slice';
+
 const SignIn = () => {
+  const dispatch = useDispatch();
+
+  const authenticateHandler = e => {
+    e.preventDefault();
+    dispatch(authSliceActions.setAuthenticated());
+  };
+
   return (
     <Card className={classes['signin']}>
       <p>
         Welcome back<span className={classes['signin__dot']}></span>
       </p>
       <h3>Sign In</h3>
-      <form>
+      <form onSubmit={authenticateHandler}>
         <div>
           <label htmlFor="email">Email Address</label>
           <Input attributes={{ id: 'email', type: 'email', placeholder: 'Email address' }}></Input>
@@ -19,10 +29,12 @@ const SignIn = () => {
         <div>
           <label htmlFor="password">Password</label>
           <Input attributes={{ id: 'password', type: 'password', placeholder: 'Password' }}></Input>
-          <a href="">Forgot password?</a>
+          <a href="#">Forgot password?</a>
         </div>
 
-        <PrimaryButton className={classes['signin__button']}>SIGN IN</PrimaryButton>
+        <PrimaryButton attributes={{ type: 'submit' }} className={classes['signin__button']}>
+          SIGN IN
+        </PrimaryButton>
       </form>
 
       <p className={classes['signin__register-action']}>

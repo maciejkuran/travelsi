@@ -1,0 +1,13 @@
+.listing-section {
+  margin: 5rem 1rem;
+}
+
+.listing-section h5 {
+  font-family: 'Permanent Marker', cursive;
+  color: var(--color-orange);
+}
+
+.listing-section__wrapper {
+  max-width: 110rem;
+  margin: 0 auto 2rem auto;
+}

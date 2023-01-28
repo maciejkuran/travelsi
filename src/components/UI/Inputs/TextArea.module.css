@@ -1,12 +1,12 @@
-.input {
+.textarea {
   border: 1px solid #cdcdcd;
   border-radius: 30px;
   padding: 1.4rem;
   background: transparent;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
-.input:focus {
+.textarea:focus {
   background-color: #f8f8f8d6;
   border: 1px solid var(--color-orange);
   transition: 500ms;

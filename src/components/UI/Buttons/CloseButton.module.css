@@ -1,0 +1,13 @@
+.close-button {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: black;
+  background: transparent;
+}
+
+.close-button:hover {
+  color: gray;
+  transition: 500ms;
+}

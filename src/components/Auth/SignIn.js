@@ -1,7 +1,7 @@
 import classes from './SignIn.module.css';
-import Card from '../UI/Card';
-import Input from '../UI/Input';
-import PrimaryButton from '../UI/PrimaryButton';
+import Card from '../UI/Card/Card';
+import Input from '../UI/Inputs/Input';
+import PrimaryButton from '../UI/Buttons/PrimaryButton';
 
 import { useDispatch } from 'react-redux';
 import { authSliceActions } from '../../store/auth-slice';
@@ -16,7 +16,7 @@ const SignIn = () => {
 
   return (
     <Card className={classes['signin']}>
-      <p>
+      <p className={classes['signin__welcome-back']}>
         Welcome back<span className={classes['signin__dot']}></span>
       </p>
       <h3>Sign In</h3>

@@ -1,13 +1,16 @@
-import classes from './Account.module.css';
-import Welcome from './Welcome/Welcome';
+import HeroSection from '../Layout/HeroSection';
+import ListingSection from '../Layout/ListingSection';
+import PostForm from '../Posts/PostForm/PostForm';
+
+import { Fragment } from 'react';
 
 const Account = () => {
   return (
-    <section className={classes['account']}>
-      <div className={classes['account__wrapper']}>
-        <Welcome />
-      </div>
-    </section>
+    <Fragment>
+      <HeroSection />
+      <PostForm></PostForm>
+      <ListingSection />
+    </Fragment>
   );
 };
 

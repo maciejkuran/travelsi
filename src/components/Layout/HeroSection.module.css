@@ -1,0 +1,41 @@
+.hero-section {
+  margin: 2rem 1rem 2rem 1rem;
+}
+
+.hero-section__wrapper {
+  background-image: url(/src/assets/img/travelsi\ img.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  max-width: 110rem;
+  margin: auto;
+}
+
+.hero-section__wrapper div {
+  max-width: 50rem;
+}
+
+.hero-section__wrapper h1 {
+  font-family: 'Permanent Marker', cursive;
+}
+
+.hero-section__wrapper h1 span {
+  color: var(--color-orange);
+}
+
+.hero-section p {
+  font-weight: 600;
+}
+
+.hero-section p span {
+  transform: rotate(30deg);
+  padding: 0.2rem;
+  border-radius: 5px;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 2rem;
+}
+
+.hero-section__button--share {
+  margin-top: 2rem;
+}

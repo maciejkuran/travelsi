@@ -11,8 +11,10 @@ function App() {
   return (
     <Fragment>
       {isAuthenticated && <Navbar />}
-      {isAuthenticated && <Account />}
-      {!isAuthenticated && <AuthView />}
+      <main>
+        {isAuthenticated && <Account />}
+        {!isAuthenticated && <AuthView />}
+      </main>
     </Fragment>
   );
 }

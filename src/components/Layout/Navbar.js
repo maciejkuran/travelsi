@@ -1,5 +1,5 @@
 import classes from './Navbar.module.css';
-import PrimaryButton from '../UI/PrimaryButton';
+import PrimaryButton from '../UI/Buttons/PrimaryButton';
 import { useDispatch } from 'react-redux';
 import { authSliceActions } from '../../store/auth-slice';
 
@@ -19,12 +19,15 @@ const Navbar = () => {
             travel<span>si</span>
           </h4>
         </div>
-        <PrimaryButton
-          attributes={{ type: 'button', onClick: logoutHandler }}
-          className={classes['nav__button--logout']}
-        >
-          LOG OUT
-        </PrimaryButton>
+        <div>
+          <span className={classes['nav__hola']}>HOLA 👋</span>
+          <PrimaryButton
+            attributes={{ type: 'button', onClick: logoutHandler }}
+            className={classes['nav__button--logout']}
+          >
+            LOG OUT
+          </PrimaryButton>
+        </div>
       </div>
     </nav>
   );

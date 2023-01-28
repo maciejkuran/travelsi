@@ -29,6 +29,18 @@
   border-radius: 50%;
 }
 
+.nav__hola {
+  font-size: 1.8rem;
+  font-family: 'Permanent Marker', cursive;
+  margin-right: 1rem;
+}
+
+.nav__actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 523px) {
   .nav__wrapper h4 {
     font-size: 1.6rem;
@@ -41,5 +53,15 @@
 
   .nav__button--logout {
     font-size: 1.4rem;
+  }
+
+  .nav__hola {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 343px) {
+  .nav__hola {
+    display: none;
   }
 }

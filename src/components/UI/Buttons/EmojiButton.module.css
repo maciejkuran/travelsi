@@ -1,0 +1,12 @@
+.emoji-button {
+  padding: 0.5rem 1rem;
+  background-color: #dbdbdb;
+  position: relative;
+  border-radius: 30px;
+  font-size: 2rem;
+}
+
+.emoji-button:hover {
+  transition: background-color 500ms;
+  background-color: #b3b3b3;
+}

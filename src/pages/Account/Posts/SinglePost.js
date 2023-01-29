@@ -1,7 +1,7 @@
 import classes from './SinglePost.module.css';
-import Card from '../UI/Card/Card';
-import parisImg from '../../assets/img/paris.jpg';
-import EmojiButton from '../UI/Buttons/EmojiButton';
+import Card from '../../../components/UI/Card/Card';
+import parisImg from '../../../assets/img/paris.jpg';
+import EmojiButton from '../../../components/UI/Buttons/EmojiButton';
 
 const SinglePost = () => {
   return (

@@ -1,20 +1,28 @@
 import classes from './PostForm.module.css';
-import Card from '../../UI/Card/Card';
-import PrimaryButton from '../../UI/Buttons/PrimaryButton';
-import Input from '../../UI/Inputs/Input';
-import TextArea from '../../UI/Inputs/TextArea';
+import Card from '../../../components/UI/Card/Card';
+import PrimaryButton from '../../../components/UI/Buttons/PrimaryButton';
+import Input from '../../../components/UI/Form/Input';
+import TextArea from '../../../components/UI/Form/TextArea';
 import PostFormTags from './PostFormTags';
 import parisImg from '../../../assets/img/paris.jpg';
-import CloseButton from '../../UI/Buttons/CloseButton';
-import Overlay from '../../UI/Overlay/Overlay';
+import CloseButton from '../../../components/UI/Buttons/CloseButton';
+import Overlay from '../../../components/UI/Overlay/Overlay';
 
 import { createPortal } from 'react-dom';
 import { Fragment } from 'react';
+import { useDispatch } from 'react-redux';
+import { uiActions } from '../../../store/slices/ui-slice';
 
 const PostForm = () => {
+  const dispatch = useDispatch();
+
+  const hidePostFormHandler = () => {
+    dispatch(uiActions.hidePostForm());
+  };
+
   const formMarkup = (
     <Fragment>
-      <Overlay />
+      <Overlay attributes={{ onClick: hidePostFormHandler }} />
       <Card className={classes['post-form']}>
         <h3>Your Best Travel Experience 🗺️</h3>
         <form>
@@ -55,7 +63,7 @@ const PostForm = () => {
             SHARE
           </PrimaryButton>
         </form>
-        <CloseButton />
+        <CloseButton attributes={{ onClick: hidePostFormHandler }} />
       </Card>
     </Fragment>
   );

@@ -1,4 +1,4 @@
-import TagButton from '../../UI/Buttons/TagButton';
+import TagButton from '../../../components/UI/Buttons/TagButton';
 
 const PostFormTags = () => {
   return (

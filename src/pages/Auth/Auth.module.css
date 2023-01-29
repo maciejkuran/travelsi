@@ -1,4 +1,4 @@
-.auth-view {
+.auth {
   height: 100vh;
   display: flex;
   column-gap: 6rem;
@@ -6,12 +6,12 @@
   margin-right: 1rem;
 }
 
-.auth-view__img {
+.auth__img {
   width: 50vw;
   height: 100vh;
 }
 
-.auth-view__img img {
+.auth__img img {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -19,12 +19,12 @@
   vertical-align: middle;
 }
 
-.auth-view__auth-window {
+.auth__auth-window {
   width: 50vw;
 }
 
 @media (max-width: 896px) {
-  .auth-view {
+  .auth {
     height: 100vh;
     background-image: url(/src/assets/img/login-image.jpg);
     background-position: center;
@@ -36,11 +36,11 @@
     align-items: center;
   }
 
-  .auth-view__img {
+  .auth__img {
     display: none;
   }
 
-  .auth-view__auth-window {
+  .auth__auth-window {
     width: 95%;
     display: flex;
     justify-content: center;

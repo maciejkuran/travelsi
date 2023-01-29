@@ -1,6 +1,6 @@
-import AuthView from './components/Auth/AuthView';
-import Navbar from './components/Layout/Navbar';
-import Account from './components/Account/Account';
+import Auth from './pages/Auth/Auth';
+import Navbar from './layout/Navbar';
+import Account from './pages/Account/Account';
 
 import { Fragment } from 'react';
 import { useSelector } from 'react-redux';
@@ -13,7 +13,7 @@ function App() {
       {isAuthenticated && <Navbar />}
       <main>
         {isAuthenticated && <Account />}
-        {!isAuthenticated && <AuthView />}
+        {!isAuthenticated && <Auth />}
       </main>
     </Fragment>
   );

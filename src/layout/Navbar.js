@@ -1,7 +1,7 @@
 import classes from './Navbar.module.css';
-import PrimaryButton from '../UI/Buttons/PrimaryButton';
+import PrimaryButton from '../components/UI/Buttons/PrimaryButton';
 import { useDispatch } from 'react-redux';
-import { authSliceActions } from '../../store/auth-slice';
+import { authSliceActions } from '../store/slices/auth-slice';
 
 const Navbar = () => {
   const dispatch = useDispatch();

@@ -1,7 +1,7 @@
 import classes from './Overlay.module.css';
 
-const Overlay = () => {
-  return <div className={classes.overlay}></div>;
+const Overlay = props => {
+  return <div {...props.attributes} className={classes.overlay}></div>;
 };
 
 export default Overlay;

@@ -4,7 +4,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 const CloseButton = props => {
   return (
-    <button className={`${classes['close-button']} ${props.className}`}>
+    <button {...props.attributes} className={`${classes['close-button']} ${props.className}`}>
       <FontAwesomeIcon icon={faXmark} />
     </button>
   );

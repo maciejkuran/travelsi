@@ -1,10 +1,10 @@
 import classes from './SignIn.module.css';
-import Card from '../UI/Card/Card';
-import Input from '../UI/Inputs/Input';
-import PrimaryButton from '../UI/Buttons/PrimaryButton';
+import Card from '../../components/UI/Card/Card';
+import Input from '../../components/UI/Form/Input';
+import PrimaryButton from '../../components/UI/Buttons/PrimaryButton';
 
 import { useDispatch } from 'react-redux';
-import { authSliceActions } from '../../store/auth-slice';
+import { authSliceActions } from '../../store/slices/auth-slice';
 
 const SignIn = () => {
   const dispatch = useDispatch();

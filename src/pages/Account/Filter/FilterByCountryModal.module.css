@@ -1,0 +1,42 @@
+.filter-by-country {
+  top: 50%;
+  left: 50%;
+  top: 15rem;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  z-index: 4;
+  max-width: 50rem;
+  width: 95%;
+}
+
+.filter-by-country h6 {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.filter-by-country__selection {
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
+  max-height: 15rem;
+  overflow: auto;
+  margin: auto;
+  background-color: rgb(247, 246, 246);
+  border-radius: 30px;
+}
+
+.filter-by-country__selection::-webkit-scrollbar {
+  width: 0;
+}
+
+.filter-by-country__selection button {
+  padding: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.filter-by-country__selection button:hover {
+  background-color: rgb(230, 230, 230);
+  transition: 300ms;
+}

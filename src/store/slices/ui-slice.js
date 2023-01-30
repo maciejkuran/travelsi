@@ -5,6 +5,8 @@ const uiSlice = createSlice({
   initialState: {
     postFormActive: false,
     countriesFilterWindowActive: false,
+    notificationStatus: '',
+    notificationMessage: '',
   },
   reducers: {
     setPostFormActive(state) {
@@ -20,6 +22,11 @@ const uiSlice = createSlice({
 
     hideCountriesFilterWindow(state) {
       state.countriesFilterWindowActive = false;
+    },
+
+    setNotification(state, action) {
+      state.notificationStatus = action.payload.status;
+      state.notificationMessage = action.payload.message;
     },
   },
 });

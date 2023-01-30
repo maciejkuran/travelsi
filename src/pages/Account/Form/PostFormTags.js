@@ -1,12 +1,12 @@
 import TagButton from '../../../components/UI/Buttons/TagButton';
 
-const PostFormTags = () => {
+const PostFormTags = props => {
   return (
     <div>
-      <TagButton>sighseeing 🏛️</TagButton>
-      <TagButton>sport ⚽</TagButton>
-      <TagButton>food 🥘</TagButton>
-      <TagButton>party 🎉</TagButton>
+      <TagButton attributes={{ onClick: props.getTagTextContentHandler }}>sighseeing 🏛️</TagButton>
+      <TagButton attributes={{ onClick: props.getTagTextContentHandler }}>sport ⚽</TagButton>
+      <TagButton attributes={{ onClick: props.getTagTextContentHandler }}>food 🥘</TagButton>
+      <TagButton attributes={{ onClick: props.getTagTextContentHandler }}>party 🎉</TagButton>
     </div>
   );
 };

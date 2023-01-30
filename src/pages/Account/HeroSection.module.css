@@ -16,10 +16,6 @@
   max-width: 50rem;
 }
 
-.hero-section__wrapper h1 {
-  font-family: 'Permanent Marker', cursive;
-}
-
 .hero-section__wrapper h1 span {
   color: var(--color-orange);
 }

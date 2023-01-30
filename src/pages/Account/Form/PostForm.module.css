@@ -24,11 +24,18 @@
 
 .post-form__inputs {
   margin: 0.7rem 0;
+  display: flex;
+}
+
+.post-form__inputs div {
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+  margin-right: 0.5rem;
 }
 
 .post-form__inputs input {
-  margin-right: 0.5rem;
-  width: 49%;
+  width: 100%;
 }
 
 #post-form__input--file {
@@ -54,7 +61,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin: 1rem 0;
+  margin-top: 1rem;
 }
 
 .post-form__image-upload img {
@@ -67,6 +74,11 @@
 
 .post-form__button--submit {
   width: 100%;
+  margin-top: 1rem;
+}
+
+.post-form__input--error {
+  font-size: 1.2rem;
 }
 
 @media (max-width: 560px) {

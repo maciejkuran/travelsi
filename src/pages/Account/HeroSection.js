@@ -16,7 +16,7 @@ const HeroSection = () => {
     <section className={classes['hero-section']}>
       <Card className={classes['hero-section__wrapper']}>
         <div>
-          <h1>
+          <h1 className={classes['hero-section__h1']}>
             Share your <span>experience</span>
           </h1>
           <p>

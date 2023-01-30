@@ -1,40 +1,41 @@
 import classes from './SinglePost.module.css';
 import Card from '../../../components/UI/Card/Card';
-import parisImg from '../../../assets/img/paris.jpg';
 import EmojiButton from '../../../components/UI/Buttons/EmojiButton';
+import paperClipImg from '../../../assets/img/paper-clip.png';
 
-const SinglePost = () => {
+const SinglePost = props => {
   return (
     <Card className={classes['single-post']}>
-      <img src={parisImg}></img>
-      <h5>Eating snails and other stuff</h5>
-      <h6>Paris, France</h6>
-      <p>
-        It is a long established fact that a reader will be distracted by the readable content of a
-        page when looking at its layout.
-      </p>
+      <img className={classes['single-post__post-img']} src={props.img}></img>
+      <h5>{props.title}</h5>
+      <h6>
+        {props.city}, {props.country}
+      </h6>
+      <p>{props.description}</p>
+      <span>{props.date}</span>
 
-      <div>
+      <div className={classes['single-post__emojis']}>
         <EmojiButton
           attributes={{ type: 'button' }}
           className={classes['single-post__button--emoji']}
         >
-          🧡<span>0</span>
+          🧡<span>{props.likeStat}</span>
         </EmojiButton>
         <EmojiButton
           attributes={{ type: 'button' }}
           className={classes['single-post__button--emoji']}
         >
-          🤣<span>0</span>
+          🤣<span>{props.laughStat}</span>
         </EmojiButton>
         <EmojiButton
           attributes={{ type: 'button' }}
           className={classes['single-post__button--emoji']}
         >
-          😡<span>0</span>
+          😡<span>{props.dislikeStat}</span>
         </EmojiButton>
       </div>
-      <div className={classes['single-post__category-tag']}>food</div>
+      <div className={classes['single-post__category-tag']}>{props.tag}</div>
+      <img className={classes['single-post__paper-clip-img']} src={paperClipImg}></img>
     </Card>
   );
 };

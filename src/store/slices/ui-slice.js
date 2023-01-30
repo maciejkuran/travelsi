@@ -6,6 +6,7 @@ const uiSlice = createSlice({
     postFormActive: false,
     countriesFilterWindowActive: false,
     notificationStatus: '',
+    notificationType: '',
     notificationMessage: '',
   },
   reducers: {
@@ -27,6 +28,7 @@ const uiSlice = createSlice({
     setNotification(state, action) {
       state.notificationStatus = action.payload.status;
       state.notificationMessage = action.payload.message;
+      state.notificationType = action.payload.type;
     },
   },
 });

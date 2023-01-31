@@ -12,6 +12,7 @@ const ListingTags = () => {
 
   return (
     <div>
+      <TagButton>All</TagButton>
       <TagButton attributes={{ onClick: openCountriesFilterWindowHandler }}>country 🗺️</TagButton>
       <TagButton>sighseeing 🏛️</TagButton>
       <TagButton>sport ⚽</TagButton>

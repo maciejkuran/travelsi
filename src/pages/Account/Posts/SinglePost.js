@@ -11,8 +11,9 @@ const SinglePost = props => {
       <h6>
         {props.city}, {props.country}
       </h6>
-      <p>{props.description}</p>
+      <p className={classes['description']}>{props.description}</p>
       <span>{props.date}</span>
+      <div className={classes['single-post__spacer']}></div>
 
       <div className={classes['single-post__emojis']}>
         <EmojiButton

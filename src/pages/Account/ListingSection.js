@@ -11,10 +11,14 @@ const ListingSection = () => {
   let notificationMarkup = '';
 
   if (uiState.notificationType === 'get' && uiState.notificationStatus === 'loading')
-    notificationMarkup = <p>{uiState.notificationMessage}</p>;
+    notificationMarkup = (
+      <p className={classes['listing-section__notification']}>{uiState.notificationMessage}</p>
+    );
 
   if (uiState.notificationType === 'get' && uiState.notificationStatus === 'error')
-    notificationMarkup = <p>{uiState.notificationMessage}</p>;
+    notificationMarkup = (
+      <p className={classes['listing-section__notification']}>{uiState.notificationMessage}</p>
+    );
 
   return (
     <section className={classes['listing-section']}>

@@ -1,18 +1,10 @@
-import { postsActions } from './posts-slice';
-import { FIREBASE_API } from '../../config/firebase';
-import { uiActions } from './ui-slice';
+import { postsActions } from '../posts-slice';
+import { FIREBASE_API } from '../../../config/firebase';
+import { uiActions } from '../ui-slice';
 
 export const fetchPosts = () => {
   return async dispatch => {
     const fetchData = async () => {
-      dispatch(
-        uiActions.setNotification({
-          status: 'loading',
-          message: '🦢 loading posts ...',
-          type: 'get',
-        })
-      );
-
       const res = await fetch(`${FIREBASE_API}/posts.json`);
 
       if (!res.ok) throw new Error('Problems with getting data. Please try again 🤔.');
@@ -29,6 +21,14 @@ export const fetchPosts = () => {
     };
 
     try {
+      dispatch(
+        uiActions.setNotification({
+          status: 'loading',
+          type: 'get',
+          message: '🦢 loading posts ...',
+        })
+      );
+
       const posts = await fetchData();
       dispatch(postsActions.getPosts({ posts: posts }));
       dispatch(

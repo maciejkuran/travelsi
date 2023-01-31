@@ -11,3 +11,7 @@
   max-width: 110rem;
   margin: 0 auto 2rem auto;
 }
+
+.listing-section__notification {
+  text-align: center;
+}

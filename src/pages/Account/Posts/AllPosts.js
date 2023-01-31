@@ -1,6 +1,6 @@
 import classes from './AllPosts.module.css';
 import SinglePost from './SinglePost';
-import { fetchPosts } from '../../../store/slices/posts-actions';
+import { fetchPosts } from '../../../store/slices/action-creators/fetchPosts';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 

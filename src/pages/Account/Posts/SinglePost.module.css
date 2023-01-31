@@ -1,5 +1,6 @@
 .single-post {
   position: relative;
+  word-wrap: break-word;
 }
 
 .single-post h5 {
@@ -34,8 +35,15 @@
   margin-right: 0.5rem;
 }
 
+.single-post__spacer {
+  height: 30px;
+  background: transparent;
+}
+
 .single-post__emojis {
-  margin-top: 0.5rem;
+  bottom: 1rem;
+  right: 1rem;
+  position: absolute;
 }
 
 .single-post__category-tag {

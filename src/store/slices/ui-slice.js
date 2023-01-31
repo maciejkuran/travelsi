@@ -12,6 +12,9 @@ const uiSlice = createSlice({
   reducers: {
     setPostFormActive(state) {
       state.postFormActive = true;
+      state.notificationStatus = '';
+      state.notificationMessage = '';
+      state.notificationType = '';
     },
     hidePostForm(state) {
       state.postFormActive = false;

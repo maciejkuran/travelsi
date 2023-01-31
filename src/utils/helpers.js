@@ -29,3 +29,11 @@ export const capitalizeInput = value => {
 
   return string;
 };
+
+export const removeEmojiFromString = string => {
+  const str = string.trim();
+  const spaceIndex = str.indexOf(' ');
+  const output = str.slice(0, spaceIndex).trim();
+
+  return output;
+};

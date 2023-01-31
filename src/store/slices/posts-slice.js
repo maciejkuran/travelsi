@@ -6,7 +6,7 @@ const postsSlice = createSlice({
     posts: [],
     postsToRender: [],
     tags: [
-      { name: 'sighseeing 🏛️', id: '1' },
+      { name: 'sightseeing 🏛️', id: '1' },
       { name: 'sport ⚽', id: '2' },
       { name: 'food 🥘', id: '3' },
       { name: 'party 🎉', id: '4' },
@@ -21,6 +21,20 @@ const postsSlice = createSlice({
     getPosts(state, action) {
       state.posts = [...action.payload.posts];
       state.postsToRender = [...action.payload.posts];
+    },
+
+    filterPostsByTag(state, action) {
+      const posts = [...state.posts];
+      state.postsToRender = posts.filter(post => post.tag === action.payload.tag);
+    },
+
+    renderAllPosts(state) {
+      state.postsToRender = [...state.posts];
+    },
+
+    filterPostsByCountry(state, action) {
+      const posts = [...state.posts];
+      state.postsToRender = posts.filter(post => post.country === action.payload.country);
     },
   },
 });

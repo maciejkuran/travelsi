@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { removeEmojiFromString } from '../utils/helpers';
 
 const useTag = () => {
   const [tagTextContent, setTagTextContent] = useState('');
@@ -6,13 +7,10 @@ const useTag = () => {
 
   const getTagTextContentHandler = e => {
     e.preventDefault();
-    const tagContent = e.target.textContent.trim();
 
-    //each tag contains emoji, I want to remove it
-    const spaceIndex = tagContent.indexOf(' ');
-    const convertedTagContent = tagContent.slice(0, spaceIndex).trim();
+    const tagContent = removeEmojiFromString(e.target.textContent);
 
-    setTagTextContent(convertedTagContent);
+    setTagTextContent(tagContent);
     setTagClicked(true);
   };
 

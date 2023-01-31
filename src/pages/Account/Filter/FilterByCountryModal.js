@@ -7,6 +7,8 @@ import { createPortal } from 'react-dom';
 import { Fragment } from 'react';
 import { useDispatch } from 'react-redux';
 import { uiActions } from '../../../store/slices/ui-slice';
+import { postsActions } from '../../../store/slices/posts-slice';
+import { useSelector } from 'react-redux';
 
 const FilterByCountryModal = () => {
   const dispatch = useDispatch();
@@ -15,19 +17,28 @@ const FilterByCountryModal = () => {
     dispatch(uiActions.hideCountriesFilterWindow());
   };
 
+  const filterByCountryHandler = e => {
+    dispatch(postsActions.filterPostsByCountry({ country: e.target.textContent }));
+    dispatch(uiActions.hideCountriesFilterWindow());
+  };
+
+  //Retreiving an array of countries from all posts
+  const allPosts = useSelector(state => state.posts.posts);
+  const countries = allPosts.map(post => post.country);
+  //As some countries may duplicate, I want to retreive unique list to avoid duplications and sort alphabetically
+  const uniqueCountryList = [...new Set(countries)].sort();
+
   const markup = (
     <Fragment>
       <Overlay attributes={{ onClick: hideCountriesFilterWindowHandler }} />
       <Card className={classes['filter-by-country']}>
         <h6>Filter by country 🗺</h6>
         <div className={classes['filter-by-country__selection']}>
-          <button type="button">Poland</button>
-          <button type="button">Poland</button>
-          <button type="button">Poland</button>
-          <button type="button">United States of America</button>
-          <button type="button">Poland</button>
-          <button type="button">Poland</button>
-          <button type="button">Poland</button>
+          {uniqueCountryList.map(country => (
+            <button onClick={filterByCountryHandler} key={country} type="button">
+              {country}
+            </button>
+          ))}
         </div>
         <CloseButton attributes={{ onClick: hideCountriesFilterWindowHandler }} />
       </Card>

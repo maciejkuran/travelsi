@@ -71,6 +71,7 @@ const PostForm = () => {
 
   //Chosen tag
   const { getTagTextContentHandler, tagTextContent, tagClicked } = useTag();
+
   //File input
   const {
     getInputFileHandler,

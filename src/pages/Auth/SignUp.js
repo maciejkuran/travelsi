@@ -52,7 +52,7 @@ const SignUp = () => {
     e.preventDefault();
 
     if (!formIsValid) {
-      setMarkupInvalidForm('🦝 Unable to sign up. Please complete all required fields.');
+      setMarkupInvalidForm('⚠ Unable to sign up. Please complete all required fields.');
       return;
     }
 
@@ -61,7 +61,7 @@ const SignUp = () => {
     dispatch(signUpUser(emailInputValue, passwordInputValue));
   };
 
-  //rendering conditionally notification markup when submitted
+  //rendering conditionally status notification of 'of signup' markup when form submitted
   let notificationMarkup = '';
 
   if (notificationType === 'signup' && notificationStatus === 'loading')
@@ -91,7 +91,7 @@ const SignUp = () => {
               onBlur: onBlurEmailInputHandler,
             }}
           ></Input>
-          {emailHasError && <span className="notification">Provide correct email address</span>}
+          {emailHasError && <span className="notification">👉 Provide correct email address</span>}
         </div>
 
         <div>
@@ -106,7 +106,7 @@ const SignUp = () => {
             }}
           ></Input>
           {passwordHasError && (
-            <span className="notification">Password must contain at least 8 characters</span>
+            <span className="notification">🔑 Password must contain at least 8 characters</span>
           )}
         </div>
 
@@ -122,7 +122,7 @@ const SignUp = () => {
             }}
           ></Input>
           {confirmationPasswordHasError && (
-            <span className="notification">Password doesn't match!</span>
+            <span className="notification">🔑 Password doesn't match!</span>
           )}
         </div>
 

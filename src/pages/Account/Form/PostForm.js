@@ -93,7 +93,7 @@ const PostForm = () => {
     e.preventDefault();
 
     if (!formIsValid) {
-      setMarkupInvalidForm('🦝 Unable to submit the form. Please complete all required fields.');
+      setMarkupInvalidForm('⚠ Unable to submit the form. Please complete all required fields.');
       return;
     }
 
@@ -147,7 +147,7 @@ const PostForm = () => {
           ></Input>
           {titleHasError && (
             <span className="notification">
-              * title must contain between 10-45 characters and can't be empty
+              👉 title must contain between 10-45 characters and can't be empty
             </span>
           )}
 
@@ -161,7 +161,7 @@ const PostForm = () => {
                   onBlur: onBlurCityInputHandler,
                 }}
               ></Input>
-              {cityHasError && <span className="notification">* this field is empty</span>}
+              {cityHasError && <span className="notification">👉 this field is empty</span>}
             </div>
             <div>
               <Input
@@ -172,7 +172,7 @@ const PostForm = () => {
                   onBlur: onBlurCountryInputHandler,
                 }}
               ></Input>
-              {countryHasError && <span className="notification">* this field is empty</span>}
+              {countryHasError && <span className="notification">👉 this field is empty</span>}
             </div>
           </div>
 
@@ -188,13 +188,13 @@ const PostForm = () => {
           {descriptionHasError && (
             <span className="notification">
               {' '}
-              * description must contain between 45-125 characters and can't be empty
+              👉 description must contain between 45-125 characters and can't be empty
             </span>
           )}
 
           <PostFormTags getTagTextContentHandler={getTagTextContentHandler}></PostFormTags>
           {!tagClicked && fileInputIsValid && (
-            <span className="notification"> * tag selection is required</span>
+            <span className="notification"> 👉 tag selection is required</span>
           )}
 
           <div className={classes['post-form__image-upload']}>
@@ -213,7 +213,7 @@ const PostForm = () => {
             ></input>
             {fileInputValue && <img src={fileInputValue}></img>}
           </div>
-          {fileInputHasError && <span className="notification"> * image required</span>}
+          {fileInputHasError && <span className="notification"> 🖼 image required</span>}
           <span className="notification">{markupInvalidForm}</span>
           <PrimaryButton
             className={classes['post-form__button--submit']}

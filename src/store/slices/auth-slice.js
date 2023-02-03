@@ -1,16 +1,27 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { firebaseAuth } from '../../config/firebase';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
 
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
     isAuthenticated: false,
+    userData: {
+      email: '',
+      uid: '',
+    },
   },
   reducers: {
-    setAuthenticated(state) {
+    isAuthenticated(state, action) {
       state.isAuthenticated = true;
+      state.userData.email = action.payload.email;
+      state.userData.uid = action.payload.uid;
     },
-    setNotAuthenticated(state) {
+
+    isNotAuthenticated(state) {
       state.isAuthenticated = false;
+      state.userData.email = '';
+      state.userData.uid = '';
     },
   },
 });

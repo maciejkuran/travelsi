@@ -77,19 +77,6 @@
   margin-top: 1rem;
 }
 
-.post-form__input--error {
-  font-size: 1.2rem;
-}
-
-.post-form__input__invalid-form {
-  font-size: 1.2rem;
-  margin: 0.3rem 0;
-}
-
-.post-form__notification-status {
-  margin-top: 1rem;
-}
-
 @media (max-width: 560px) {
   .post-form__inputs input {
     margin: 0.7rem 0;

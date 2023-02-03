@@ -4,14 +4,14 @@ import Input from '../../components/UI/Form/Input';
 import PrimaryButton from '../../components/UI/Buttons/PrimaryButton';
 
 import { useDispatch } from 'react-redux';
-import { authSliceActions } from '../../store/slices/auth-slice';
+import { uiActions } from '../../store/slices/ui-slice';
 
 const SignIn = () => {
   const dispatch = useDispatch();
 
-  const authenticateHandler = e => {
+  const switchToSignUpHandler = e => {
     e.preventDefault();
-    dispatch(authSliceActions.setAuthenticated());
+    dispatch(uiActions.isRegistering());
   };
 
   return (
@@ -20,7 +20,7 @@ const SignIn = () => {
         Welcome back<span className={classes['signin__dot']}></span>
       </p>
       <h3>Sign In</h3>
-      <form onSubmit={authenticateHandler}>
+      <form>
         <div>
           <label htmlFor="email">Email Address</label>
           <Input attributes={{ id: 'email', type: 'email', placeholder: 'Email address' }}></Input>
@@ -38,7 +38,10 @@ const SignIn = () => {
       </form>
 
       <p className={classes['signin__register-action']}>
-        Don't have an account? <a href="">Register now</a>
+        Don't have an account?{' '}
+        <a onClick={switchToSignUpHandler} href="">
+          Sign Up
+        </a>
       </p>
 
       <div className={classes['signin__disclaimer']}>

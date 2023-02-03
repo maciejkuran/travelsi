@@ -1,14 +1,35 @@
 import classes from './Navbar.module.css';
 import PrimaryButton from '../components/UI/Buttons/PrimaryButton';
-import { useDispatch } from 'react-redux';
-import { authSliceActions } from '../store/slices/auth-slice';
+import { useDispatch, useSelector } from 'react-redux';
+import signOutAction from '../store/slices/action-creators/signOut';
 
 const Navbar = () => {
   const dispatch = useDispatch();
+  const { notificationStatus, notificationType, notificationMessage } = useDispatch(
+    state => state.ui
+  );
 
   const logoutHandler = () => {
-    dispatch(authSliceActions.setNotAuthenticated());
+    dispatch(signOutAction());
   };
+
+  //Render conditionally logout status
+  let logoutMarkupStatus = '';
+
+  if (notificationType === 'signout' && notificationStatus === 'loading')
+    logoutMarkupStatus = (
+      <span className={classes['nav__logout-status']}>{notificationMessage}</span>
+    );
+
+  if (notificationType === 'signout' && notificationStatus === 'success')
+    logoutMarkupStatus = (
+      <span className={classes['nav__logout-status']}>{notificationMessage}</span>
+    );
+
+  if (notificationType === 'signout' && notificationStatus === 'error')
+    logoutMarkupStatus = (
+      <span className={classes['nav__logout-status']}>{notificationMessage}</span>
+    );
 
   return (
     <nav className={classes['nav']}>
@@ -25,10 +46,11 @@ const Navbar = () => {
             attributes={{ type: 'button', onClick: logoutHandler }}
             className={classes['nav__button--logout']}
           >
-            LOG OUT
+            SIGN OUT
           </PrimaryButton>
         </div>
       </div>
+      {logoutMarkupStatus}
     </nav>
   );
 };

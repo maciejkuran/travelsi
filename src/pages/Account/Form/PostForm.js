@@ -122,19 +122,13 @@ const PostForm = () => {
   let notificationMarkup;
 
   if (notificationType === 'post' && notificationStatus === 'submitting')
-    notificationMarkup = (
-      <p className={classes['post-form__notification-status']}>{notificationMessage}</p>
-    );
+    notificationMarkup = <p className="notification">{notificationMessage}</p>;
 
   if (notificationType === 'post' && notificationStatus === 'success')
-    notificationMarkup = (
-      <p className={classes['post-form__notification-status']}>{notificationMessage}</p>
-    );
+    notificationMarkup = <p className="notification">{notificationMessage}</p>;
 
   if (notificationType === 'post' && notificationStatus === 'error')
-    notificationMarkup = (
-      <p className={classes['post-form__notification-status']}>{notificationMessage}</p>
-    );
+    notificationMarkup = <p className="notification">{notificationMessage}</p>;
 
   const formMarkup = (
     <Fragment>
@@ -152,7 +146,7 @@ const PostForm = () => {
             }}
           ></Input>
           {titleHasError && (
-            <span className={classes['post-form__input--error']}>
+            <span className="notification">
               * title must contain between 10-45 characters and can't be empty
             </span>
           )}
@@ -167,9 +161,7 @@ const PostForm = () => {
                   onBlur: onBlurCityInputHandler,
                 }}
               ></Input>
-              {cityHasError && (
-                <span className={classes['post-form__input--error']}>* this field is empty</span>
-              )}
+              {cityHasError && <span className="notification">* this field is empty</span>}
             </div>
             <div>
               <Input
@@ -180,9 +172,7 @@ const PostForm = () => {
                   onBlur: onBlurCountryInputHandler,
                 }}
               ></Input>
-              {countryHasError && (
-                <span className={classes['post-form__input--error']}>* this field is empty</span>
-              )}
+              {countryHasError && <span className="notification">* this field is empty</span>}
             </div>
           </div>
 
@@ -196,7 +186,7 @@ const PostForm = () => {
             }}
           ></TextArea>
           {descriptionHasError && (
-            <span className={classes['post-form__input--error']}>
+            <span className="notification">
               {' '}
               * description must contain between 45-125 characters and can't be empty
             </span>
@@ -204,7 +194,7 @@ const PostForm = () => {
 
           <PostFormTags getTagTextContentHandler={getTagTextContentHandler}></PostFormTags>
           {!tagClicked && fileInputIsValid && (
-            <span className={classes['post-form__input--error']}> * tag selection is required</span>
+            <span className="notification"> * tag selection is required</span>
           )}
 
           <div className={classes['post-form__image-upload']}>
@@ -223,10 +213,8 @@ const PostForm = () => {
             ></input>
             {fileInputValue && <img src={fileInputValue}></img>}
           </div>
-          {fileInputHasError && (
-            <span className={classes['post-form__input--error']}> * image required</span>
-          )}
-          <p className={classes['post-form__input__invalid-form']}>{markupInvalidForm}</p>
+          {fileInputHasError && <span className="notification"> * image required</span>}
+          <span className="notification">{markupInvalidForm}</span>
           <PrimaryButton
             className={classes['post-form__button--submit']}
             attributes={{ type: 'submit' }}

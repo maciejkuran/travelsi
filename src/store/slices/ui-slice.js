@@ -3,6 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 const uiSlice = createSlice({
   name: 'ui',
   initialState: {
+    isLogging: true,
+    isRegistering: false,
     postFormActive: false,
     countriesFilterWindowActive: false,
     notificationStatus: '',
@@ -10,6 +12,14 @@ const uiSlice = createSlice({
     notificationMessage: '',
   },
   reducers: {
+    isLogging(state) {
+      state.isLogging = true;
+      state.isRegistering = false;
+    },
+    isRegistering(state) {
+      state.isLogging = false;
+      state.isRegistering = true;
+    },
     setPostFormActive(state) {
       state.postFormActive = true;
       state.notificationStatus = '';

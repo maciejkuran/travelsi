@@ -6,6 +6,13 @@ export const checkTitleLength = value =>
 export const checkDescriptionLength = value =>
   value.length <= 125 && value.length !== 0 && value.length >= 45;
 
+export const validateEmail = value =>
+  value.length >= 5 && value.includes('.') && value.includes('@');
+
+export const validatePassword = value => value.length >= 8;
+
+export const validatePasswordMatch = (value, prevValue) => prevValue === value;
+
 export const readDate = () => {
   const date = new Date();
 

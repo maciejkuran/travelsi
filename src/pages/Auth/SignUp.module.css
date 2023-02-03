@@ -1,12 +1,12 @@
-.signin {
+.signup {
   max-width: 50rem;
 }
 
-.signin__welcome-back {
+.signup__welcome {
   font-family: 'Permanent Marker', cursive;
 }
 
-.signin__dot {
+.signup__dot {
   height: 22px;
   width: 22px;
   margin-left: 0.5rem;
@@ -15,41 +15,34 @@
   position: absolute;
 }
 
-.signin form {
+.signup form {
   margin-top: 3rem;
 }
 
-.signin form div {
+.signup form div {
   display: flex;
   flex-direction: column;
   margin: 2rem 0;
 }
 
-.signin form div a {
-  font-size: 1.3rem;
-  color: var(--color-orange);
-  margin-left: auto;
-  margin-top: 1rem;
-}
-
-.signin__register-action {
+.signup__signin-action {
   margin-top: 3rem;
   font-size: 1.6rem;
 }
 
-.signin__register-action a {
+.signup__signin-action a {
   font-size: 1.6rem;
 }
 
-.signin__button {
+.signup__button {
   min-width: 100%;
 }
 
-.signin__disclaimer {
+.signup__disclaimer {
   margin-top: 2rem;
 }
 
-.signin__disclaimer p {
+.signup__disclaimer p {
   color: rgb(123, 123, 123);
   font-size: 1.1rem;
   font-weight: 400;

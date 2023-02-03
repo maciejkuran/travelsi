@@ -19,7 +19,6 @@ const ListingTags = () => {
 
   const renderPostsByTagHandler = e => {
     const tagContent = removeEmojiFromString(e.target.textContent);
-    console.log(e.target);
     setActiveTag(e.target.id);
     dispatch(postsActions.filterPostsByTag({ tag: tagContent }));
   };

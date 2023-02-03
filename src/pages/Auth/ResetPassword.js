@@ -6,10 +6,21 @@ import CloseButton from '../../components/UI/Buttons/CloseButton';
 import Overlay from '../../components/UI/Overlay/Overlay';
 import { validateEmail } from '../../utils/helpers';
 import { createPortal } from 'react-dom';
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import useInput from '../../hooks/useInput';
+import resetPassword from '../../store/slices/action-creators/resetPassword';
+import { useDispatch, useSelector } from 'react-redux';
+import { uiActions } from '../../store/slices/ui-slice';
 
 const ResetPassword = () => {
+  const dispatch = useDispatch();
+  const [markupInvalidForm, setMarkupInvalidForm] = useState('');
+  const [requestSent, setRequestSent] = useState(false);
+
+  const { notificationStatus, notificationType, notificationMessage } = useSelector(
+    state => state.ui
+  );
+
   const {
     getInputHandler: getEmailInputHandler,
     onBlurInputHandler: onBlurEmailInputHandler,
@@ -22,7 +33,31 @@ const ResetPassword = () => {
 
   const resetPasswordHandler = e => {
     e.preventDefault();
+
+    if (!formIsValid) {
+      setMarkupInvalidForm('👉 cannot submit your request');
+      return;
+    }
+    setMarkupInvalidForm('');
+    dispatch(resetPassword(emailInputValue));
+    setRequestSent(true);
   };
+
+  const closeResetHandler = () => {
+    dispatch(uiActions.hideResettingPassword());
+  };
+
+  //rendering conditionally status notification of 'resetting' markup when form submitted
+  let statusNotificationMarkup = '';
+
+  if (notificationType === 'resetpw' && notificationStatus === 'loading')
+    statusNotificationMarkup = <span className="notification">{notificationMessage}</span>;
+
+  if (notificationType === 'resetpw' && notificationStatus === 'success')
+    statusNotificationMarkup = <span className="notification">{notificationMessage}</span>;
+
+  if (notificationType === 'resetpw' && notificationStatus === 'error')
+    statusNotificationMarkup = <span className="notification">{notificationMessage}</span>;
 
   const markup = (
     <Fragment>
@@ -45,15 +80,17 @@ const ResetPassword = () => {
           </div>
 
           <PrimaryButton
-            attributes={{ type: 'submit' }}
+            attributes={{ type: 'submit', disabled: requestSent }}
             className={classes['reset-password__button']}
           >
             RESET
           </PrimaryButton>
+          {statusNotificationMarkup}
+          <span className="notification">{markupInvalidForm}</span>
         </form>
-        <CloseButton />
+        <CloseButton attributes={{ onClick: closeResetHandler }} />
       </Card>
-      <Overlay />
+      <Overlay attributes={{ onClick: closeResetHandler }} />
     </Fragment>
   );
 

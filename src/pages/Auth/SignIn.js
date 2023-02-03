@@ -53,6 +53,11 @@ const SignIn = () => {
     dispatch(signIn(emailInputValue, passwordInputValue));
   };
 
+  const showForgotPasswordHandler = e => {
+    e.preventDefault();
+    dispatch(uiActions.isResettingPassword());
+  };
+
   //rendering condtionally status 'signIn' notifications when form submitted
   let statusNotificationMarkup;
 
@@ -100,7 +105,9 @@ const SignIn = () => {
           {passwordHasError && (
             <span className="notification">🔑 Password must contain at least 8 characters</span>
           )}
-          <a href="#">Forgot password?</a>
+          <a onClick={showForgotPasswordHandler} href="">
+            Forgot password?
+          </a>
         </div>
 
         <PrimaryButton attributes={{ type: 'submit' }} className={classes['signin__button']}>

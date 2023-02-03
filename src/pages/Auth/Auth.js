@@ -7,7 +7,7 @@ import ResetPassword from './ResetPassword';
 import { useSelector } from 'react-redux';
 
 const Auth = () => {
-  const { isLogging, isRegistering } = useSelector(state => state.ui);
+  const { isLogging, isRegistering, isResettingPassword } = useSelector(state => state.ui);
 
   return (
     <section className={classes['auth']}>
@@ -17,7 +17,7 @@ const Auth = () => {
       <div className={classes['auth__auth-window']}>
         {isLogging && <SignIn />}
         {isRegistering && <SignUp />}
-        <ResetPassword />
+        {isResettingPassword && <ResetPassword />}
       </div>
     </section>
   );

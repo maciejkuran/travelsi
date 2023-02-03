@@ -5,6 +5,7 @@ const uiSlice = createSlice({
   initialState: {
     isLogging: true,
     isRegistering: false,
+    isResettingPassword: false,
     postFormActive: false,
     countriesFilterWindowActive: false,
     notificationStatus: '',
@@ -20,6 +21,14 @@ const uiSlice = createSlice({
       state.isLogging = false;
       state.isRegistering = true;
     },
+    isResettingPassword(state) {
+      state.isResettingPassword = true;
+    },
+
+    hideResettingPassword(state) {
+      state.isResettingPassword = false;
+    },
+
     setPostFormActive(state) {
       state.postFormActive = true;
       state.notificationStatus = '';

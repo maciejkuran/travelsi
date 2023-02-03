@@ -48,6 +48,18 @@
   font-size: 1.2rem;
 }
 
+.nav__wrapper--internal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__wrapper--internal div {
+  display: flex;
+  flex-direction: column;
+  margin-right: 0.5rem;
+}
+
 @media (max-width: 523px) {
   .nav__wrapper h4 {
     font-size: 1.6rem;
@@ -60,6 +72,7 @@
 
   .nav__button--logout {
     font-size: 1.4rem;
+    padding: 1rem 1.3rem;
   }
 
   .nav__hola {
@@ -68,7 +81,7 @@
 }
 
 @media (max-width: 343px) {
-  .nav__hola {
+  .nav__wrapper--internal div {
     display: none;
   }
 }

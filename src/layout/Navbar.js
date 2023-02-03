@@ -5,9 +5,11 @@ import signOutAction from '../store/slices/action-creators/signOut';
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const { notificationStatus, notificationType, notificationMessage } = useDispatch(
+  const { notificationStatus, notificationType, notificationMessage } = useSelector(
     state => state.ui
   );
+
+  const { email } = useSelector(state => state.auth.userData);
 
   const logoutHandler = () => {
     dispatch(signOutAction());
@@ -40,8 +42,12 @@ const Navbar = () => {
             travel<span>si</span>
           </h4>
         </div>
-        <div>
-          <span className={classes['nav__hola']}>HOLA 👋</span>
+        <div className={classes['nav__wrapper--internal']}>
+          <div>
+            <span className={classes['nav__hola']}>HOLA 👋</span>
+            <span>{email}</span>
+          </div>
+
           <PrimaryButton
             attributes={{ type: 'button', onClick: logoutHandler }}
             className={classes['nav__button--logout']}

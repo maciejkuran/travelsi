@@ -29,6 +29,7 @@ const PostForm = () => {
   const { notificationStatus, notificationMessage, notificationType } = useSelector(
     state => state.ui
   );
+  const { accessToken } = useSelector(state => state.auth.userData);
   const [markupInvalidForm, setMarkupInvalidForm] = useState('');
 
   const hidePostFormHandler = () => {
@@ -115,7 +116,7 @@ const PostForm = () => {
       title: titleValue,
     };
 
-    dispatch(sendPost(post, id));
+    dispatch(sendPost(post, id, accessToken));
   };
 
   //Show send status conditionally when form is submitted

@@ -2,10 +2,10 @@ import { FIREBASE_API } from '../../../config/firebase';
 import { uiActions } from '../ui-slice';
 import { postsActions } from '../posts-slice';
 
-const sendPost = (post, id) => {
+const sendPost = (post, id, accessToken) => {
   return async dispatch => {
     const send = async () => {
-      const res = await fetch(`${FIREBASE_API}/posts/${id}.json`, {
+      const res = await fetch(`${FIREBASE_API}/posts/${id}.json?auth=${accessToken}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

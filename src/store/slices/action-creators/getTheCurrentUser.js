@@ -6,7 +6,13 @@ const getTheCurrentUser = () => {
   return dispatch => {
     onAuthStateChanged(firebaseAuth, user => {
       if (user) {
-        dispatch(authSliceActions.isAuthenticated({ email: user.email, uid: user.uid }));
+        dispatch(
+          authSliceActions.isAuthenticated({
+            email: user.email,
+            uid: user.uid,
+            accessToken: user.accessToken,
+          })
+        );
       } else {
         dispatch(authSliceActions.isNotAuthenticated());
       }

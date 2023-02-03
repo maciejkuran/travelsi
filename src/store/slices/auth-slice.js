@@ -9,6 +9,7 @@ const authSlice = createSlice({
     userData: {
       email: '',
       uid: '',
+      accessToken: '',
     },
   },
   reducers: {
@@ -16,12 +17,14 @@ const authSlice = createSlice({
       state.isAuthenticated = true;
       state.userData.email = action.payload.email;
       state.userData.uid = action.payload.uid;
+      state.userData.accessToken = action.payload.accessToken;
     },
 
     isNotAuthenticated(state) {
       state.isAuthenticated = false;
       state.userData.email = '';
       state.userData.uid = '';
+      state.userData.accessToken = '';
     },
   },
 });

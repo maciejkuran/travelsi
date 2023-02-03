@@ -22,7 +22,7 @@ const resetPassword = email => {
       dispatch(
         uiActions.setNotification({
           status: 'success',
-          message: '📧 password reset email has been sent!',
+          message: '📧 password reset email has been sent onto your email!',
           type: 'resetpw',
         })
       );

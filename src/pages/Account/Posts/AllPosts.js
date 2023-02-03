@@ -7,9 +7,10 @@ import { useDispatch, useSelector } from 'react-redux';
 const AllPosts = () => {
   const dispatch = useDispatch();
   const posts = useSelector(state => state.posts.postsToRender);
+  const { accessToken } = useSelector(state => state.auth.userData);
 
   useEffect(() => {
-    dispatch(fetchPosts());
+    dispatch(fetchPosts(accessToken));
   }, []);
 
   return (

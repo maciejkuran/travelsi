@@ -2,10 +2,10 @@ import { postsActions } from '../posts-slice';
 import { FIREBASE_API } from '../../../config/firebase';
 import { uiActions } from '../ui-slice';
 
-export const fetchPosts = () => {
+export const fetchPosts = accessToken => {
   return async dispatch => {
     const fetchData = async () => {
-      const res = await fetch(`${FIREBASE_API}/posts.json`);
+      const res = await fetch(`${FIREBASE_API}/posts.json?auth=${accessToken}`);
 
       if (!res.ok) throw new Error('Problems with getting data. Please try again 🤔.');
 

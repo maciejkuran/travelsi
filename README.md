@@ -1,25 +1,56 @@
-# travelsi (react-redux exercise)
+# travelsi app
 
-✈🏝 [travelsi LIVE](https://travelsi-demo.netlify.app/)
+✈🏝 [travelsi LIVE APP](https://travelsi-demo.netlify.app/)
 
-I wanted to practice and cover quickly the basics of the Redux Toolkit with React. Therefore designing a new app and developing it (basically just the demo concept of the web app) within just a few hours was my other challenge.
+This project was about practising the Redux library, and being more precise `react-redux` & `@reduxjs/toolkit`. I have practiced most of the react concepts I have learned so far.
 
-There's nothing complex in this little tiny application - actually no features. At least for now. I may come back to this project later, as soon as find some time off.
+In addition, working with Firebase and the real-time data was a great experience.
 
-The goals of this little project:
+## What is travelsi ?
 
-- understanding how the Redux works in general;
-- understanding how to keep app-wide state maintainable and clean using `createSlice` (slicing states which are not directly related);
-- `configureStore` and merge all possible reducers as one `reducer`;
-- dispatching created actions with `useDispatch` hook;
-- accessing state values in components with `useSelector` hook;
+Travelsi is an app for sharing travel experiences. In order to join the community and be able to share the posts, you need to sign up first.
 
-What I managed to accomplish, is:
+## Functionalities
 
-- very simple state `true` or `false` for checking if a user `isAuthenticated`;
-- If `isAuthenticated`, a user can access `Account` component and its children. For now, `isAuthenticated` means to submit any random values when Sign In.
+- Sign up/Sign in/Sign out
+- Reset password
+- Add new post
+- Filter posts by tag & country
+- Add feelings (like/dislike post)
 
 ## UI
+
 - light, modern, responsive
 
 <p align="center"><img src="/src/assets/img/travelsi-ui.png"></p>
+
+## What I have achieved in this project so far 🎯
+
+#### Connecting project to Firebase
+
+This project required a backend so I connected it to the Firebase where I used the Realtime Database and Authentication features. Although my experience with Firebase is little so far, I think it is a powerful tool. Being only a frontend developer, with the help of documentation you can quickly create a basic backend for your application.
+
+- I use Firebase Authentication (basic email & password) to sign up/sign in/sign out users and reset account passwords when requested.
+- I use Realtime Database to store all users' posts.
+
+* Only authenticated users can read and write data to a certain path.
+
+#### Redux Toolkit
+
+- Understanding how to keep app-wide state maintainable and clean using `createSlice` (slicing states which are not directly related eg. `auth-slice`, `posts-slice`, `ui-slice`).
+- `configureStore` and merge all reducers as one `reducer`.
+- Dispatching created actions with `useDispatch` hook.
+- Accessing state values in components with `useSelector` hook.
+
+#### Building custom hooks
+
+I tried to make my custom hooks as generic as it's possible so I could flexibly reuse them. For example:
+
+- `useInput` hook checks if input `isTouched`, gets the input `value` or checks if `inputIsValid` based on `validationFunction`.
+
+#### Feedback/handling states - (input/form validity, loading, success/error for async tasks)
+
+Handling states and returning a user proper notifications was one of the key aspects of this project.
+
+- Complex input & form validation and returning notification if something `isNotValid` in a user-friendly way.
+- Handling notification states for async `fetch` requests (loading, success, error) & rendering in UI conditionally.

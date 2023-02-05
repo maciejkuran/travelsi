@@ -36,6 +36,24 @@ const postsSlice = createSlice({
       const posts = [...state.posts];
       state.postsToRender = posts.filter(post => post.country === action.payload.country);
     },
+
+    updateSinglePost(state, action) {
+      const postID = action.payload.id;
+
+      //returning updated state for 'posts'
+      const posts = [...state.posts];
+      const index = posts.findIndex(post => post.id === postID);
+      posts.splice(index, 1, action.payload.post);
+
+      state.posts = posts;
+
+      //returning updated state for 'postsToRender'
+      const postsToRender = [...state.postsToRender];
+      const index2 = postsToRender.findIndex(post => post.id === postID);
+      postsToRender.splice(index2, 1, action.payload.post);
+
+      state.postsToRender = postsToRender;
+    },
   },
 });
 

@@ -27,9 +27,7 @@ const AllPosts = () => {
               img={post.img}
               tag={post.tag}
               title={post.title}
-              likeStat={post.likeStat}
-              dislikeStat={post.dislikeStat}
-              laughStat={post.laughStat}
+              feelings={post.feelings}
               key={post.id}
             />
           );

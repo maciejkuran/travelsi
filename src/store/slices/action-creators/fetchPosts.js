@@ -16,7 +16,6 @@ export const fetchPosts = accessToken => {
       for (const key in data) {
         posts.push(data[key]);
       }
-
       return posts;
     };
 

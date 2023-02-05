@@ -35,6 +35,10 @@
   margin-right: 0.5rem;
 }
 
+.single-post__button--emoji--clicked {
+  border: 3px solid var(--color-orange);
+}
+
 .single-post__spacer {
   height: 30px;
   background: transparent;

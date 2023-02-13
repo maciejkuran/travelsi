@@ -1,13 +1,13 @@
 import classes from './FilterByCountryModal.module.css';
-import Card from '../../../components/UI/Card/Card';
-import CloseButton from '../../../components/UI/Buttons/CloseButton';
-import Overlay from '../../../components/UI/Overlay/Overlay';
+import Card from '../../../../components/UI/Card/Card';
+import CloseButton from '../../../../components/UI/Buttons/CloseButton';
+import Overlay from '../../../../components/UI/Overlay/Overlay';
 
 import { createPortal } from 'react-dom';
 import { Fragment } from 'react';
 import { useDispatch } from 'react-redux';
-import { uiActions } from '../../../store/slices/ui-slice';
-import { postsActions } from '../../../store/slices/posts-slice';
+import { uiActions } from '../../../../store/slices/ui-slice';
+import { postsActions } from '../../../../store/slices/posts-slice';
 import { useSelector } from 'react-redux';
 
 const FilterByCountryModal = () => {

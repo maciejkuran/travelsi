@@ -1,7 +1,7 @@
 import classes from './ListingSection.module.css';
-import AllPosts from './Posts/AllPosts';
-import ListingTags from './Filter/ListingTags';
-import FilterByCountryModal from './Filter/FilterByCountryModal';
+import AllPosts from './components/Posts/AllPosts';
+import ListingTags from './components/Filter/ListingTags';
+import FilterByCountryModal from './components/Filter/FilterByCountryModal';
 
 import { useSelector } from 'react-redux';
 

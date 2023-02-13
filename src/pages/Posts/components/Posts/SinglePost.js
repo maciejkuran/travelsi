@@ -1,9 +1,9 @@
 import classes from './SinglePost.module.css';
-import Card from '../../../components/UI/Card/Card';
-import EmojiButton from '../../../components/UI/Buttons/EmojiButton';
-import paperClipImg from '../../../assets/img/paper-clip.png';
+import Card from '../../../../components/UI/Card/Card';
+import EmojiButton from '../../../../components/UI/Buttons/EmojiButton';
+import paperClipImg from '../../../../assets/img/paper-clip.png';
 import { useDispatch, useSelector } from 'react-redux';
-import ratePost from '../../../store/slices/action-creators/ratePost';
+import ratePost from '../../../../store/slices/action-creators/ratePost';
 import { useState, useEffect } from 'react';
 
 const SinglePost = props => {

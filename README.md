@@ -64,6 +64,10 @@ This part was a bit tricky due to real-time data flow and potential app performa
 - Like reaction in the database is marked as `1` and dislike is `-1`.
 - When a user clicks a feeling, `put` request is sent to the server and replaces any previous feeling (if any existed). This solution eliminates multiple feelings by the same user. When `put` request is done, another `get` request is sent in order to get the latest post data. Then we dispatch the action to update the state managed by the Redux library. That's it in a nutshell.
 
+#### Routes with React Router
+
+Implemented routing, including automatic redirections if user `!isAuthenticated` or `isAuthenticated`.
+
 #### Final thoughts 😉
 
 This project has consumed a lot of time, and I have a lot of studying ahead of me. However, I hope to return to this project and develop new functionalities, and even more to take advantage of newly acquired knowledge that may come in handy. I have plenty of ideas for implementing new cool features. Thanks for reading! 👋

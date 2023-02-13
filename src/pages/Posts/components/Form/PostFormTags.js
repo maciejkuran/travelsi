@@ -1,6 +1,6 @@
 import classes from './PostFormTags.module.css';
 
-import TagButton from '../../../components/UI/Buttons/TagButton';
+import TagButton from '../../../../components/UI/Buttons/TagButton';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 

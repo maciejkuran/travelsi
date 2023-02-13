@@ -1,28 +1,28 @@
 import classes from './PostForm.module.css';
-import Card from '../../../components/UI/Card/Card';
-import PrimaryButton from '../../../components/UI/Buttons/PrimaryButton';
-import Input from '../../../components/UI/Form/Input';
-import TextArea from '../../../components/UI/Form/TextArea';
+import Card from '../../../../components/UI/Card/Card';
+import PrimaryButton from '../../../../components/UI/Buttons/PrimaryButton';
+import Input from '../../../../components/UI/Form/Input';
+import TextArea from '../../../../components/UI/Form/TextArea';
 import PostFormTags from './PostFormTags';
-import CloseButton from '../../../components/UI/Buttons/CloseButton';
-import Overlay from '../../../components/UI/Overlay/Overlay';
+import CloseButton from '../../../../components/UI/Buttons/CloseButton';
+import Overlay from '../../../../components/UI/Overlay/Overlay';
 
 import { caseSensitive_numbs_PW } from 'super-strong-password-generator-es';
 import { createPortal } from 'react-dom';
 import { Fragment, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { uiActions } from '../../../store/slices/ui-slice';
-import useInput from '../../../hooks/useInput';
-import useFileInput from '../../../hooks/useFileInput';
-import useTag from '../../../hooks/useTag';
+import { uiActions } from '../../../../store/slices/ui-slice';
+import useInput from '../../../../hooks/useInput';
+import useFileInput from '../../../../hooks/useFileInput';
+import useTag from '../../../../hooks/useTag';
 import {
   checkIfNotEmpty,
   checkTitleLength,
   checkDescriptionLength,
   readDate,
   capitalizeInput,
-} from '../../../utils/helpers';
-import sendPost from '../../../store/slices/action-creators/sendPost';
+} from '../../../../utils/helpers';
+import sendPost from '../../../../store/slices/action-creators/sendPost';
 
 const PostForm = () => {
   const dispatch = useDispatch();

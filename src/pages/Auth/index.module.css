@@ -41,6 +41,7 @@
   }
 
   .auth__auth-window {
+    margin: 0 1.5rem;
     width: 95%;
     display: flex;
     justify-content: center;

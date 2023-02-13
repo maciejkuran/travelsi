@@ -1,10 +1,10 @@
-import TagButton from '../../../components/UI/Buttons/TagButton';
+import TagButton from '../../../../components/UI/Buttons/TagButton';
 import classes from './ListingTags.module.css';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { uiActions } from '../../../store/slices/ui-slice';
-import { removeEmojiFromString } from '../../../utils/helpers';
-import { postsActions } from '../../../store/slices/posts-slice';
+import { uiActions } from '../../../../store/slices/ui-slice';
+import { removeEmojiFromString } from '../../../../utils/helpers';
+import { postsActions } from '../../../../store/slices/posts-slice';
 import { useState } from 'react';
 
 const ListingTags = () => {
